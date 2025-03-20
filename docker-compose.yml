@@ -1,10 +1,6 @@
 services:
   anki-sync-server:
-    build:
-      context: docs/syncserver
-      dockerfile: Dockerfile
-      args:
-        ANKI_VERSION: 24.11
+    image: 762233731293.dkr.ecr.ap-northeast-2.amazonaws.com/tonynamy/anki-sync-server:24.11
     volumes:
       - ${HOST_DATA_PATH}:/anki_data
     ports:
