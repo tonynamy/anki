@@ -1,0 +1,13 @@
+services:
+  anki-sync-server:
+    build:
+      context: docs/syncserver
+      dockerfile: Dockerfile
+      args:
+        ANKI_VERSION: 24.11
+    volumes:
+      - ${HOST_DATA_PATH}:/anki_data
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
